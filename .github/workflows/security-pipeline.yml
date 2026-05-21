@@ -1,0 +1,26 @@
+name: Secure DevOps Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-scan:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker compose build
+
+      - name: Run container
+        run: docker compose up -d
+
+      - name: Test health endpoint
+        run: curl.exe http://127.0.0.1:5000/health
+
+      - name: Stop container
+        run: docker compose down
