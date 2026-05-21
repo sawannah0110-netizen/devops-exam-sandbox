@@ -1,0 +1,33 @@
+services:
+  api:
+    build: .
+    container_name: secure-data-api
+    ports:
+      - "127.0.0.1:5000:5000"
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    restart: unless-stopped
+    networks:
+      - backend
+
+  redis:
+    image: redis:7.2-alpine
+    expose:
+      - "6379"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+    
