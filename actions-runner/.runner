@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "LAKSHI",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus21.actions.githubusercontent.com/vmULwf1nYy0PrUqPWuL7gwQDwjzfSp8SCz0aZgtPYF7cfoH11a/",
+  "gitHubUrl": "https://github.com/sawannah0110-netizen/devops-exam-sandbox",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

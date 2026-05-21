@@ -23,3 +23,5 @@ def process_data():
 @app.route("/health", methods=["GET"])
 def health():
     return jsonify({"status": "healthy"}), 200
+
+# pipeline trigger
